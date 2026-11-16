@@ -4,12 +4,12 @@ function AdminLayout({ currentView, onNavigate, children }) {
     <div className="admin-layout">
       <header>
         <h1>EduLearn - Administration</h1>
-        <nav>
-          <button onClick={() => onNavigate("users")}>
-            Utilisateurs
-          </button>
 
-          <button onClick={() => onNavigate("courses")}>
+        <nav>
+          <button
+            onClick={() => onNavigate("courses")}
+            aria-current={currentView === "courses" ? "page" : undefined}
+          >
             Catalogue des cours
           </button>
         </nav>
@@ -19,7 +19,7 @@ function AdminLayout({ currentView, onNavigate, children }) {
         {children}
       </main>
     </div>
-  );
+  )
 }
 
-export default AdminLayout;
+export default AdminLayout
